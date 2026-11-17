@@ -4,7 +4,7 @@ Intégration Home Assistant **locale** (sans cloud ni MQTT) pour le chauffage **
 
 > **Nécessite une centrale PH-CJ39 WiFi** (Elektrobock PocketHome) sur votre réseau, en mode LOCAL IP. Sans elle, l'intégration ne fait rien. Les anciennes centrales (ex. PH-CJ37) utilisent un autre protocole et ne sont **pas prises en charge**. Développée et testée avec une PH-CJ39 WiFi, des thermostats PH-ET7-V et un récepteur PH-BP1-P9 ; les autres modèles de la gamme ne sont pas testés.
 
-Langues : English, Français, Deutsch, Čeština (entités, services, cartes). [English](README.md).
+Langues : English, Français, Deutsch, Čeština (entités, services, cartes). [English](README.md). Discussion et retours : [fil du forum Home Assistant](https://community.home-assistant.io/t/pockethome-elektrobock-ph-cj39-local-no-cloud-integration-looking-for-testers/1035116).
 
 ## Fonctions
 - Une entité `climate` par thermostat : température, consigne, auto/manuel/éteint, chauffage en cours.

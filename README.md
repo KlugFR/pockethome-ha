@@ -4,7 +4,7 @@ Local (no cloud, no MQTT) Home Assistant integration for the **Elektrobock Pocke
 
 > **Requires a PH-CJ39 WiFi central unit** (Elektrobock PocketHome) on your network, in LOCAL IP mode. Without it the integration does nothing. Older central units (e.g. PH-CJ37) use a different protocol and are **not supported**. Developed and tested with one PH-CJ39 WiFi, PH-ET7-V thermostats and a PH-BP1-P9 receiver; other thermostat and receiver models of the range are untested.
 
-Languages: English, Français, Deutsch, Čeština (entities, services, cards). Docs: [Français](README.fr.md).
+Languages: English, Français, Deutsch, Čeština (entities, services, cards). Docs: [Français](README.fr.md). Discussion and feedback: [Home Assistant Community thread](https://community.home-assistant.io/t/pockethome-elektrobock-ph-cj39-local-no-cloud-integration-looking-for-testers/1035116).
 
 ## Features
 - One `climate` entity per thermostat: temperature, setpoint, auto/manual/off, heating on/off.
