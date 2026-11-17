@@ -1,0 +1,138 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "PocketHome",
+        "description": "Vyžaduje centrálu Elektrobock PocketHome PH-CJ39 WiFi v režimu LOCAL IP (podržte tlačítko LOCAL IP 4–10 s). Jiná zařízení nejsou podporována.",
+        "data": {
+          "host": "IP adresa centrály",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Centrála není dostupná (režim LOCAL IP?)"
+    },
+    "abort": {
+      "already_configured": "Centrála je již nastavena"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "program": {
+        "name": "Program"
+      },
+      "link": {
+        "name": "Rádiové spojení (surová hodnota)"
+      },
+      "power": {
+        "name": "Výkon"
+      },
+      "energy": {
+        "name": "Energie"
+      }
+    },
+    "binary_sensor": {
+      "no_signal": {
+        "name": "Ztráta signálu"
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Aktualizovat termostat (rádio)"
+      }
+    },
+    "datetime": {
+      "holiday_start": {
+        "name": "Začátek dovolené"
+      },
+      "holiday_end": {
+        "name": "Konec dovolené"
+      }
+    },
+    "number": {
+      "rated_power": {
+        "name": "Výkon radiátoru"
+      },
+      "absence_temp": {
+        "name": "Teplota při nepřítomnosti"
+      },
+      "holiday_temp": {
+        "name": "Teplota na dovolené (ochrana proti mrazu)"
+      }
+    },
+    "select": {
+      "program": {
+        "name": "Program"
+      }
+    },
+    "switch": {
+      "summer": {
+        "name": "Letní režim"
+      },
+      "holiday": {
+        "name": "Dovolená"
+      },
+      "absence": {
+        "name": "Nepřítomnost"
+      }
+    },
+    "text": {
+      "room_name": {
+        "name": "Název v centrále"
+      }
+    }
+  },
+  "services": {
+    "get_program": {
+      "name": "Přečíst program",
+      "description": "Vrátí program centrály (název a časové úseky každého dne, začíná pondělím).",
+      "fields": {
+        "program": {
+          "name": "Číslo",
+          "description": ""
+        }
+      }
+    },
+    "get_programs": {
+      "name": "Přečíst programy",
+      "description": "Vrátí 22 programů centrály (název a časové úseky každého dne, začíná pondělím)."
+    },
+    "set_program": {
+      "name": "Zapsat program",
+      "description": "Nahradí program centrály (1 až 22). 7 dnů, 1 až 6 úseků za den, začátky v 10minutové mřížce, 5 až 30 °C po 0,5.",
+      "fields": {
+        "program": {
+          "name": "Číslo",
+          "description": ""
+        },
+        "name": {
+          "name": "Název",
+          "description": ""
+        },
+        "days": {
+          "name": "Dny",
+          "description": "Seznam 7 dnů (začíná pondělím), každý je seznam {start: \"HH:MM\", temperature: 21}."
+        }
+      }
+    },
+    "copy_day": {
+      "name": "Kopírovat den",
+      "description": "Zkopíruje úseky dne programu do jiných dnů.",
+      "fields": {
+        "program": {
+          "name": "Číslo",
+          "description": ""
+        },
+        "from_day": {
+          "name": "Zdrojový den",
+          "description": ""
+        },
+        "to_days": {
+          "name": "Cílové dny",
+          "description": ""
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "PocketHome",
+        "description": "Erfordert eine Elektrobock PocketHome Zentrale PH-CJ39 WiFi im LOCAL-IP-Modus (LOCAL-IP-Taste 4–10 s drücken). Andere Geräte werden nicht unterstützt.",
+        "data": {
+          "host": "IP-Adresse der Zentrale",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Zentrale nicht erreichbar (LOCAL-IP-Modus?)"
+    },
+    "abort": {
+      "already_configured": "Zentrale bereits eingerichtet"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "program": {
+        "name": "Programm"
+      },
+      "link": {
+        "name": "Funkverbindung (Rohwert)"
+      },
+      "power": {
+        "name": "Leistung"
+      },
+      "energy": {
+        "name": "Energie"
+      }
+    },
+    "binary_sensor": {
+      "no_signal": {
+        "name": "Signal verloren"
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Thermostat aktualisieren (Funk)"
+      }
+    },
+    "datetime": {
+      "holiday_start": {
+        "name": "Urlaubsbeginn"
+      },
+      "holiday_end": {
+        "name": "Urlaubsende"
+      }
+    },
+    "number": {
+      "rated_power": {
+        "name": "Leistung des Heizkörpers"
+      },
+      "absence_temp": {
+        "name": "Abwesenheitstemperatur"
+      },
+      "holiday_temp": {
+        "name": "Urlaubstemperatur (Frostschutz)"
+      }
+    },
+    "select": {
+      "program": {
+        "name": "Programm"
+      }
+    },
+    "switch": {
+      "summer": {
+        "name": "Sommermodus"
+      },
+      "holiday": {
+        "name": "Urlaub"
+      },
+      "absence": {
+        "name": "Abwesenheit"
+      }
+    },
+    "text": {
+      "room_name": {
+        "name": "Name in der Zentrale"
+      }
+    }
+  },
+  "services": {
+    "get_program": {
+      "name": "Programm lesen",
+      "description": "Liefert ein Programm der Zentrale (Name und Schaltzeiten jedes Tages, Montag zuerst).",
+      "fields": {
+        "program": {
+          "name": "Nummer",
+          "description": ""
+        }
+      }
+    },
+    "get_programs": {
+      "name": "Programme lesen",
+      "description": "Liefert die 22 Programme der Zentrale (Name und Schaltzeiten jedes Tages, Montag zuerst)."
+    },
+    "set_program": {
+      "name": "Programm schreiben",
+      "description": "Ersetzt ein Programm der Zentrale (1 bis 22). 7 Tage, 1 bis 6 Schaltzeiten pro Tag, Beginn im 10-Minuten-Raster, 5 bis 30 °C in 0,5-Schritten.",
+      "fields": {
+        "program": {
+          "name": "Nummer",
+          "description": ""
+        },
+        "name": {
+          "name": "Name",
+          "description": ""
+        },
+        "days": {
+          "name": "Tage",
+          "description": "Liste von 7 Tagen (Montag zuerst), jeder eine Liste von {start: \"HH:MM\", temperature: 21}."
+        }
+      }
+    },
+    "copy_day": {
+      "name": "Tag kopieren",
+      "description": "Kopiert die Schaltzeiten eines Tages eines Programms auf andere Tage.",
+      "fields": {
+        "program": {
+          "name": "Nummer",
+          "description": ""
+        },
+        "from_day": {
+          "name": "Quelltag",
+          "description": ""
+        },
+        "to_days": {
+          "name": "Zieltage",
+          "description": ""
+        }
+      }
+    }
+  }
+}

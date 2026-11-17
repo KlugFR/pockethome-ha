@@ -1,0 +1,9 @@
+# Captures réseau, captures d'écran et fichiers de travail : jamais publiés
+*.pcap
+screens/
+*.xlsx
+.DS_Store
+__pycache__/
+# Logo de l'app officielle : marque d'Elektrobock, usage personnel seulement (superposé par scripts/deploy.sh)
+local-brand/
+dist/

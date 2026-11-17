@@ -1,0 +1,27 @@
+get_program:
+  fields:
+    program:
+      required: true
+      selector: {number: {min: 1, max: 22}}
+get_programs:
+set_program:
+  fields:
+    program:
+      required: true
+      selector: {number: {min: 1, max: 22}}
+    name:
+      selector: {text: {}}
+    days:
+      required: true
+      selector: {object: {}}
+copy_day:
+  fields:
+    program:
+      required: true
+      selector: {number: {min: 1, max: 22}}
+    from_day:
+      required: true
+      selector: {select: {options: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]}}
+    to_days:
+      required: true
+      selector: {select: {multiple: true, options: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]}}

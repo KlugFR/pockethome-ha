@@ -1,0 +1,138 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "PocketHome",
+        "description": "Nécessite une centrale Elektrobock PocketHome PH-CJ39 WiFi en mode LOCAL IP (appui de 4 à 10 s sur le bouton LOCAL IP). Aucun autre appareil n'est pris en charge.",
+        "data": {
+          "host": "Adresse IP de la centrale",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Centrale injoignable (mode LOCAL IP ?)"
+    },
+    "abort": {
+      "already_configured": "Centrale déjà configurée"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "program": {
+        "name": "Programme"
+      },
+      "link": {
+        "name": "Lien radio (brut)"
+      },
+      "power": {
+        "name": "Puissance"
+      },
+      "energy": {
+        "name": "Énergie"
+      }
+    },
+    "binary_sensor": {
+      "no_signal": {
+        "name": "Signal perdu"
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Actualiser le thermostat (radio)"
+      }
+    },
+    "datetime": {
+      "holiday_start": {
+        "name": "Début des vacances"
+      },
+      "holiday_end": {
+        "name": "Fin des vacances"
+      }
+    },
+    "number": {
+      "rated_power": {
+        "name": "Puissance du radiateur"
+      },
+      "absence_temp": {
+        "name": "Température absence"
+      },
+      "holiday_temp": {
+        "name": "Température vacances (hors gel)"
+      }
+    },
+    "select": {
+      "program": {
+        "name": "Programme"
+      }
+    },
+    "switch": {
+      "summer": {
+        "name": "Mode été"
+      },
+      "holiday": {
+        "name": "Vacances"
+      },
+      "absence": {
+        "name": "Absence"
+      }
+    },
+    "text": {
+      "room_name": {
+        "name": "Nom dans la centrale"
+      }
+    }
+  },
+  "services": {
+    "get_program": {
+      "name": "Lire un programme",
+      "description": "Renvoie un programme de la centrale (nom et plages de chaque jour, lundi d'abord).",
+      "fields": {
+        "program": {
+          "name": "Numéro",
+          "description": ""
+        }
+      }
+    },
+    "get_programs": {
+      "name": "Lire les programmes",
+      "description": "Renvoie les 22 programmes de la centrale (nom et plages de chaque jour, lundi d'abord)."
+    },
+    "set_program": {
+      "name": "Écrire un programme",
+      "description": "Remplace un programme de la centrale (1 à 22). 7 jours, 1 à 6 plages par jour, débuts sur la grille de 10 min, températures de 5 à 30 °C par 0,5.",
+      "fields": {
+        "program": {
+          "name": "Numéro",
+          "description": ""
+        },
+        "name": {
+          "name": "Nom",
+          "description": ""
+        },
+        "days": {
+          "name": "Jours",
+          "description": "Liste de 7 jours (lundi d'abord), chacun une liste de {start: \"HH:MM\", temperature: 21}."
+        }
+      }
+    },
+    "copy_day": {
+      "name": "Copier un jour",
+      "description": "Copie les plages d'un jour d'un programme vers d'autres jours.",
+      "fields": {
+        "program": {
+          "name": "Numéro",
+          "description": ""
+        },
+        "from_day": {
+          "name": "Jour source",
+          "description": ""
+        },
+        "to_days": {
+          "name": "Jours cibles",
+          "description": ""
+        }
+      }
+    }
+  }
+}

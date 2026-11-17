@@ -1,0 +1,50 @@
+blueprint:
+  name: PocketHome - alerte thermostat (piles / signal perdu)
+  description: >
+    Envoie une notification à l'app HA mobile quand un thermostat PocketHome perd le signal
+    (LED rouge de la centrale : en général, piles vides). Le niveau « batterie faible » n'est pas
+    utilisé : les accus NiCd/NiMH l'indiquent dès qu'ils sont posés.
+    Installation : copier ce fichier dans /config/blueprints/automation/pockethome/.
+  domain: automation
+  input:
+    sensors:
+      name: Capteurs à surveiller
+      description: Les capteurs « Signal perdu » des thermostats équipés de piles.
+      selector:
+        entity:
+          multiple: true
+          filter:
+            - integration: pockethome
+              domain: binary_sensor
+              device_class: problem
+    notify_device:
+      name: Téléphone à prévenir
+      selector:
+        device:
+          filter:
+            - integration: mobile_app
+    delay:
+      name: Délai avant l'alerte
+      description: Évite les fausses alertes sur une coupure passagère.
+      default: 10
+      selector:
+        number:
+          min: 0
+          max: 120
+          unit_of_measurement: min
+mode: queued
+max_exceeded: silent
+triggers:
+  - trigger: state
+    entity_id: !input sensors
+    to: "on"
+    for:
+      minutes: !input delay
+actions:
+  - alias: Notification sur le téléphone
+    domain: mobile_app
+    type: notify
+    device_id: !input notify_device
+    title: "Chauffage : thermostat à vérifier"
+    message: >-
+      {{ trigger.to_state.name }} : piles vides probables.

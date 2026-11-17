@@ -1,0 +1,26 @@
+# "Chauffage" dashboard view for the PocketHome integration (one VIEW, not a whole dashboard).
+# Install: open the tab > pencil (Edit dashboard) > pencil next to the tab name > ⋮ > "Edit in YAML"
+# > replace everything with this file > Save. (In the raw configuration editor a view is an item of
+# `views:`: indent this block and put "- " before `title`.)
+# No entity id to adapt: the cards find the PocketHome entities themselves.
+title: Chauffage
+path: chauffage
+icon: mdi:radiator
+type: sections
+max_columns: 3
+sections:
+  - type: grid
+    cards:
+      - type: custom:pockethome-modes-card
+        title: Centrale
+  - type: grid
+    cards:
+      - type: custom:pockethome-rooms-card
+        title: Thermostats
+        # Option : ajouter au total un capteur d'énergie hors centrale (ex. Shelly, en kWh ou Wh) et nommer le total.
+        # total_label: Chauffage total (maison + atelier)
+        # extra_energy: sensor.shelly_atelier_energy
+  - type: grid
+    cards:
+      # Sans `program` : liste déroulante des 22 programmes. Avec `program: 10` : un programme fixe.
+      - type: custom:pockethome-program-card

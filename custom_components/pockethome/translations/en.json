@@ -1,0 +1,138 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "PocketHome",
+        "description": "Requires an Elektrobock PocketHome PH-CJ39 WiFi central unit in LOCAL IP mode (press the LOCAL IP button 4–10 s). No other device is supported.",
+        "data": {
+          "host": "Central unit IP address",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Central unit unreachable (LOCAL IP mode?)"
+    },
+    "abort": {
+      "already_configured": "Central unit already configured"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "program": {
+        "name": "Program"
+      },
+      "link": {
+        "name": "Radio link (raw)"
+      },
+      "power": {
+        "name": "Power"
+      },
+      "energy": {
+        "name": "Energy"
+      }
+    },
+    "binary_sensor": {
+      "no_signal": {
+        "name": "Signal lost"
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Refresh thermostat (radio)"
+      }
+    },
+    "datetime": {
+      "holiday_start": {
+        "name": "Holiday start"
+      },
+      "holiday_end": {
+        "name": "Holiday end"
+      }
+    },
+    "number": {
+      "rated_power": {
+        "name": "Radiator power"
+      },
+      "absence_temp": {
+        "name": "Absence temperature"
+      },
+      "holiday_temp": {
+        "name": "Holiday temperature (frost protection)"
+      }
+    },
+    "select": {
+      "program": {
+        "name": "Program"
+      }
+    },
+    "switch": {
+      "summer": {
+        "name": "Summer mode"
+      },
+      "holiday": {
+        "name": "Holiday"
+      },
+      "absence": {
+        "name": "Absence"
+      }
+    },
+    "text": {
+      "room_name": {
+        "name": "Name in the central unit"
+      }
+    }
+  },
+  "services": {
+    "get_program": {
+      "name": "Read a program",
+      "description": "Returns a program of the central unit (name and slots of each day, Monday first).",
+      "fields": {
+        "program": {
+          "name": "Number",
+          "description": ""
+        }
+      }
+    },
+    "get_programs": {
+      "name": "Read the programs",
+      "description": "Returns the 22 programs of the central unit (name and slots of each day, Monday first)."
+    },
+    "set_program": {
+      "name": "Write a program",
+      "description": "Replaces a program of the central unit (1 to 22). 7 days, 1 to 6 slots per day, starts on the 10 min grid, 5 to 30 °C in 0.5 steps.",
+      "fields": {
+        "program": {
+          "name": "Number",
+          "description": ""
+        },
+        "name": {
+          "name": "Name",
+          "description": ""
+        },
+        "days": {
+          "name": "Days",
+          "description": "List of 7 days (Monday first), each a list of {start: \"HH:MM\", temperature: 21}."
+        }
+      }
+    },
+    "copy_day": {
+      "name": "Copy a day",
+      "description": "Copies the slots of a day of a program to other days.",
+      "fields": {
+        "program": {
+          "name": "Number",
+          "description": ""
+        },
+        "from_day": {
+          "name": "Source day",
+          "description": ""
+        },
+        "to_days": {
+          "name": "Target days",
+          "description": ""
+        }
+      }
+    }
+  }
+}
