@@ -1,4 +1,6 @@
 {
+  "domain": "pockethome",
+  "name": "PocketHome (Elektrobock)",
   "codeowners": [
     "@KlugFR"
   ],
@@ -8,11 +10,9 @@
     "frontend"
   ],
   "documentation": "https://github.com/KlugFR/pockethome-ha",
-  "domain": "pockethome",
   "integration_type": "hub",
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/KlugFR/pockethome-ha/issues",
-  "name": "PocketHome (Elektrobock)",
   "requirements": [],
   "version": "0.3.0"
 }
