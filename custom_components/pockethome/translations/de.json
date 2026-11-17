@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "PocketHome",
-        "description": "Erfordert eine Elektrobock PocketHome Zentrale PH-CJ39 WiFi im LOCAL-IP-Modus (LOCAL-IP-Taste 4–10 s drücken). Andere Geräte werden nicht unterstützt.",
+        "description": "Erfordert eine Elektrobock PocketHome Zentrale PH-CJ39 WiFi im LOCAL-IP-Modus (LOCAL-IP-Taste 4–10 s drücken). Andere Geräte werden nicht unterstützt. Keine Authentifizierung oder Verschlüsselung: nur in ein vertrauenswürdiges Netzwerk einbinden.",
         "data": {
           "host": "IP-Adresse der Zentrale",
           "port": "Port"

@@ -20,6 +20,18 @@ Langues : English, Français, Deutsch, Čeština (entités, services, cartes). [
 - Adresse IP de la centrale (réservation DHCP conseillée), port TCP 4000. Le protocole n'a **aucune authentification** : réseau de confiance seulement.
 - Home Assistant 2025.1 ou plus (développé sur 2026.11).
 
+## Sécurité : le protocole n'est ni chiffré ni authentifié
+En rétro-concevant le protocole, nous avons constaté que les applis officielles parlent à la centrale **en clair sur le port TCP 4000, sans mot de passe, sans jeton et sans chiffrement**. C'est le fonctionnement des applis du fabricant, pas un ajout de cette intégration. Conséquences :
+- **Toute personne qui atteint l'adresse IP de la centrale et son port 4000 peut lire l'état de votre chauffage et le modifier** : consignes, programmes, modes été/absence/vacances, jusqu'aux noms des pièces.
+- Toute personne capable d'écouter le segment réseau peut lire les échanges.
+
+Faites donc attention à l'endroit où la centrale est connectée :
+- Uniquement sur un réseau de confiance : un VLAN ou réseau IoT séparé est idéal, joignable depuis Home Assistant seulement.
+- **Jamais** de port 4000 exposé sur Internet (ni redirection de port, ni UPnP, ni tunnel public).
+- Pas sur un Wi-Fi invité ou partagé.
+- Si votre pare-feu le permet, n'accepter les connexions vers la centrale que depuis l'hôte Home Assistant.
+- Cette intégration n'ajoute aucune protection : elle ne peut pas rendre la centrale plus sûre.
+
 ## Installation
 ### HACS
 1. Ouvrir HACS (sur Home Assistant 2026.11+ il est intégré : *Paramètres → Marketplace*) et ajouter `https://github.com/KlugFR/pockethome-ha` avec le bouton **« ajouter grâce à un lien »**, comme dépôt de type *Intégration*. Dans l'ancien HACS : menu ⋮ → *Dépôts personnalisés*.

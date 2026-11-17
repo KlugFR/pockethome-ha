@@ -20,6 +20,18 @@ Languages: English, Français, Deutsch, Čeština (entities, services, cards). D
 - The unit's IP address (give it a DHCP reservation), TCP port 4000. The protocol has **no authentication**: keep the unit on a trusted network.
 - Home Assistant 2025.1 or newer (developed on 2026.11).
 
+## Security: the protocol is not encrypted or authenticated
+While reverse-engineering the protocol we found that the official apps talk to the central unit in **clear text over TCP port 4000, with no password, no token and no encryption**. This is how the vendor's own apps work, not something this integration adds. Consequences:
+- **Anyone who can reach the unit's IP address and port 4000 can read your heating state and change it**: setpoints, programs, summer/absence/holiday modes, even the room names.
+- Anyone who can sniff the network segment can read the traffic.
+
+So be careful where the central unit is connected:
+- Keep it on a trusted network only: a separate VLAN or IoT network is best, reachable only from Home Assistant.
+- **Never** expose port 4000 to the Internet (no port forwarding, no UPnP, no public tunnel).
+- Do not put it on a guest or shared Wi-Fi.
+- If your firewall allows it, accept connections to the unit from the Home Assistant host only.
+- This integration adds no layer of its own: it cannot make the unit safer.
+
 ## Installation
 ### HACS
 1. Open HACS (on Home Assistant 2026.11+ it is integrated: *Settings → Marketplace*) and add `https://github.com/KlugFR/pockethome-ha` by its link, as a repository of type *Integration*. In the Marketplace this is the "add via link" button (French UI: « ajouter grâce à un lien »); in classic HACS it is ⋮ → *Custom repositories*.

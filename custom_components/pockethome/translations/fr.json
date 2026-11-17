@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "PocketHome",
-        "description": "Nécessite une centrale Elektrobock PocketHome PH-CJ39 WiFi en mode LOCAL IP (appui de 4 à 10 s sur le bouton LOCAL IP). Aucun autre appareil n'est pris en charge.",
+        "description": "Nécessite une centrale Elektrobock PocketHome PH-CJ39 WiFi en mode LOCAL IP (appui de 4 à 10 s sur le bouton LOCAL IP). Aucun autre appareil n'est pris en charge. Aucune authentification ni chiffrement : ne la connectez qu'à un réseau de confiance.",
         "data": {
           "host": "Adresse IP de la centrale",
           "port": "Port"

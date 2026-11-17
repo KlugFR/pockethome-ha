@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "PocketHome",
-        "description": "Requires an Elektrobock PocketHome PH-CJ39 WiFi central unit in LOCAL IP mode (press the LOCAL IP button 4–10 s). No other device is supported.",
+        "description": "Requires an Elektrobock PocketHome PH-CJ39 WiFi central unit in LOCAL IP mode (press the LOCAL IP button 4–10 s). No other device is supported. No authentication or encryption: connect it to a trusted network only.",
         "data": {
           "host": "Central unit IP address",
           "port": "Port"

@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "PocketHome",
-        "description": "Vyžaduje centrálu Elektrobock PocketHome PH-CJ39 WiFi v režimu LOCAL IP (podržte tlačítko LOCAL IP 4–10 s). Jiná zařízení nejsou podporována.",
+        "description": "Vyžaduje centrálu Elektrobock PocketHome PH-CJ39 WiFi v režimu LOCAL IP (podržte tlačítko LOCAL IP 4–10 s). Jiná zařízení nejsou podporována. Bez ověření a šifrování: připojujte ji jen k důvěryhodné síti.",
         "data": {
           "host": "IP adresa centrály",
           "port": "Port"
