@@ -11,7 +11,7 @@ I built a custom integration for the **Elektrobock PocketHome** heating system (
 **What it does**
 - One `climate` entity per thermostat: temperature, setpoint, auto / manual / off, heating on/off.
 - **Programs stay in the central unit and the thermostats.** Home Assistant is a nicer "web version" of the official app, not a scheduler.
-- A program editor card (a fork of [heating-schedule-card](https://github.com/Pandetthe/heating-schedule-card), MIT): 22 programs in a drop-down, up to 6 slots a day on a 10 min grid, copy/paste of days, program renaming.
+- A program editor card (a fork of Pandetthe's heating-schedule-card, MIT): 22 programs in a drop-down, up to 6 slots a day on a 10 min grid, copy/paste of days, program renaming.
 - Per thermostat: program selector, name stored in the central unit, radio link quality, a "signal lost" sensor, and optional radiator power / energy sensors for statistics.
 - Central modes: summer, absence (one setpoint for all rooms) and holiday (period plus temperature, e.g. frost protection).
 - A thermostats card with the heating state and the energy of the day per radiator and in total.
@@ -33,7 +33,7 @@ I built a custom integration for the **Elektrobock PocketHome** heating system (
 4. *Settings → Devices & services → Add integration → PocketHome*, enter the IP address and port 4000.
 5. Hard-refresh the browser once so the cards load, then paste `dashboards/chauffage.yaml` from the repository into a dashboard view (⋮ → *Edit in YAML*).
 
-**Manual install:** download `pockethome-0.3.0.zip` from the [release page](https://github.com/KlugFR/pockethome-ha/releases/tag/v0.3.0), unzip it into `/config/`, and restart.
+**Manual install:** download `pockethome-0.3.0.zip` from the Releases page of the repository, unzip it into `/config/`, and restart.
 
 **Transparency:** this integration was developed with substantial help from an AI coding assistant (Claude Code). I reviewed it, tested it against my own central unit, and take responsibility for it. The protocol was reverse-engineered from network captures of the official app.
 
