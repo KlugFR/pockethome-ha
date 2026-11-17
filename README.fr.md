@@ -22,7 +22,7 @@ Langues : English, Français, Deutsch, Čeština (entités, services, cartes). [
 
 ## Installation
 ### HACS
-1. Ouvrir HACS (sur Home Assistant 2026.11+ il est intégré : *Paramètres → Marketplace*) et ajouter `https://github.com/KlugFR/pockethome-ha` comme dépôt personnalisé de type *Intégration* (menu ⋮ → *Dépôts personnalisés* dans HACS ; les libellés peuvent différer dans le nouveau Marketplace).
+1. Ouvrir HACS (sur Home Assistant 2026.11+ il est intégré : *Paramètres → Marketplace*) et ajouter `https://github.com/KlugFR/pockethome-ha` avec le bouton **« ajouter grâce à un lien »**, comme dépôt de type *Intégration*. Dans l'ancien HACS : menu ⋮ → *Dépôts personnalisés*.
 2. Installer **PocketHome (Elektrobock)**, redémarrer Home Assistant.
 
 ### Manuelle
