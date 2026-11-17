@@ -1,4 +1,4 @@
-# Forum post (Home Assistant community, category "Custom Integrations")
+# Forum post (Home Assistant community, category "Share your Projects!" > "Custom Integrations")
 
 **Title:** PocketHome (Elektrobock PH-CJ39): local, no-cloud integration, looking for testers
 
