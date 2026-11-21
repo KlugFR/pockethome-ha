@@ -37,7 +37,9 @@ max_exceeded: silent
 triggers:
   - trigger: state
     entity_id: !input sensors
-    to: "on"
+    to:
+      - "on"
+      - unavailable  # sans pile, le thermostat disparaît de la centrale : l'entité devient indisponible
     for:
       minutes: !input delay
 actions:
@@ -47,4 +49,4 @@ actions:
     device_id: !input notify_device
     title: "Chauffage : thermostat à vérifier"
     message: >-
-      {{ trigger.to_state.name }} : piles vides probables.
+      {{ trigger.to_state.name }} : thermostat injoignable, piles vides probables.
